@@ -15,9 +15,9 @@ const LeftArrow = () => (
       <path
         d='M17 7L10 14.0002L17 21'
         stroke='white'
-        stroke-width='1.5'
-        stroke-linecap='round'
-        stroke-linejoin='round'
+        strokeWidth='1.5'
+        strokeLinecap='round'
+        strokeLinejoin='round'
       />
     </g>
   </svg>
