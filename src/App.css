@@ -1,7 +1,7 @@
 #root {
-  max-width: 1280px;
+  max-width: 375px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 36px 19px 24px;
   text-align: center;
 }
 
@@ -39,4 +39,20 @@
 
 .read-the-docs {
   color: #888;
+}
+
+.notic-red-dot {
+  position: relative;
+}
+
+.notic-red-dot::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  right: -6px;
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 4px;
+  background-color: #e3051c;
 }
