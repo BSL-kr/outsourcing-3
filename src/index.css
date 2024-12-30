@@ -111,6 +111,11 @@ blockquote,
 q {
   quotes: none;
 }
+
+* {
+  box-sizing: border-box;
+}
+
 blockquote:before,
 blockquote:after,
 q:before,
