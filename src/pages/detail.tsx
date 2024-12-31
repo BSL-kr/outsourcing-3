@@ -6,6 +6,20 @@ import DetailWorkStop from '../components/detail/workStop';
 import DetailPoint from '../components/detail/point';
 import DetailFooter from '../components/detail/footer';
 
+const StyledDetailPage = styled.div`
+  max-width: 375px;
+  margin: 0 auto;
+
+  .contents-box {
+    padding: 20px 0px 115px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    background: linear-gradient(180deg, #ffffff -21.58%, #eeeff3 65.53%);
+  }
+`;
+
 const StyledDetailPageHeader = styled.header`
   background-color: #121314;
 
@@ -50,17 +64,6 @@ const StyledDetailPageHeader = styled.header`
       width: 86px;
       height: 76px;
     }
-  }
-`;
-
-const StyledDetailPage = styled.div`
-  .contents-box {
-    padding: 20px 0px 115px;
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
-
-    background: linear-gradient(180deg, #ffffff -21.58%, #eeeff3 65.53%);
   }
 `;
 
