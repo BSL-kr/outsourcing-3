@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1168, initial-scale=1.0" />
+    <link rel="stylesheet" href="style/init.css" />
+    <link rel="stylesheet" href="style/report.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="safe-report-page">
+      <header>
+        <div class="title gothic-a1-bold">2024년 07월 안전 리포트</div>
+        <div class="button-box">
+          <button class="gothic-a1-semibold">인쇄</button>
+          <img src="./svg/Icon_close.svg" />
+        </div>
+      </header>
+      <table>
+        <tbody>
+          <tr class="safe-report-contents-header">
+            <td class="left">
+              <div>
+                <div class="title gothic-a1-bold">현장</div>
+                <div class="contents gothic-a1-medium">현장명이 입력됩니다.</div>
+              </div>
+              <div>
+                <div class="title gothic-a1-bold">시공사</div>
+                <div class="contents gothic-a1-medium">시공사1, 시공사2</div>
+              </div>
+              <div>
+                <div class="title gothic-a1-bold">현장소장</div>
+                <div class="contents gothic-a1-medium">박소장</div>
+              </div>
+            </td>
+            <td class="divider"></td>
+            <td class="right">
+              <div class="total-box">
+                <div class="title gothic-a1-semibold">전체 TBM 수행률</div>
+                <div class="amount gothic-a1-extrabold">67%</div>
+              </div>
+              <div class="chart-box">
+                <div class="chart">
+                  <canvas id="total-TBM-work-rate" width="136" height="136"></canvas>
+                </div>
+                <div class="chart-label">
+                  <div class="chart-data-item">
+                    <span></span>
+                    <div class="company gothic-a1-medium">업체1</div>
+                    <div class="gothic-a1-bold">60%</div>
+                  </div>
+                  <div class="chart-data-item">
+                    <span></span>
+                    <div class="company gothic-a1-medium">MH&T</div>
+                    <div class="gothic-a1-bold">30%</div>
+                  </div>
+                  <div class="chart-data-item">
+                    <span></span>
+                    <div class="company gothic-a1-medium">포스코인터내셔널워크그룹</div>
+                    <div class="gothic-a1-bold">5%</div>
+                  </div>
+                  <div class="chart-data-item">
+                    <span></span>
+                    <div class="company gothic-a1-medium">기타</div>
+                    <div class="gothic-a1-bold">5%</div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr class="safe-report-contents-1">
+            <td class="left">
+              <div class="title gothic-a1-bold">출역/TBM 현황</div>
+              <div class="table">
+                <div class="table-header">
+                  <div class="gothic-a1-semibold">구분 (명)</div>
+                  <div class="gothic-a1-semibold">전월</div>
+                  <div class="gothic-a1-semibold">당월</div>
+                </div>
+                <div class="table-row">
+                  <div class="title gothic-a1-semibold">출역 인원</div>
+                  <div>30</div>
+                  <div>30</div>
+                </div>
+                <div class="table-row">
+                  <div class="title gothic-a1-semibold">TBM 인원</div>
+                  <div>20</div>
+                  <div>22</div>
+                </div>
+                <div class="table-row">
+                  <div class="title gothic-a1-semibold">출역 횟수</div>
+                  <div>600</div>
+                  <div>900</div>
+                </div>
+                <div class="table-row">
+                  <div class="title gothic-a1-semibold">TBM 수행 횟수</div>
+                  <div>600</div>
+                  <div>600</div>
+                </div>
+                <div class="table-row">
+                  <div class="title gothic-a1-semibold">고위험 근로자</div>
+                  <div>5</div>
+                  <div>4</div>
+                </div>
+              </div>
+            </td>
+            <td class="right">
+              <div class="title gothic-a1-bold">TBM 수행률 비교(전체 현장)</div>
+              <div>
+                <canvas id="TBM-work-rate" height="362"></canvas>
+              </div>
+            </td>
+          </tr>
+          <tr class="safe-report-contents-2">
+            <td class="left">
+              <div class="title gothic-a1-bold">인력 구성 현황</div>
+              <div class="table">
+                <div class="table-header">
+                  <div class="gothic-a1-semibold">구분 (명)</div>
+                  <div class="gothic-a1-semibold">전월</div>
+                  <div class="gothic-a1-semibold">당월</div>
+                </div>
+                <div class="table-row">
+                  <div class="title gothic-a1-semibold">단기 근로자</div>
+                  <div>30</div>
+                  <div>30</div>
+                </div>
+                <div class="table-row">
+                  <div class="title gothic-a1-semibold">상용직 작업자</div>
+                  <div>20</div>
+                  <div>22</div>
+                </div>
+                <div class="table-row">
+                  <div class="title gothic-a1-semibold">관리자</div>
+                  <div>20</div>
+                  <div>22</div>
+                </div>
+              </div>
+            </td>
+            <td class="right">
+              <div class="title gothic-a1-bold">안전 점수 비교</div>
+              <div class="chart-box">
+                <div>
+                  <div class="safe-point-chart-label">
+                    <span></span>
+                    <div class="gothic-a1-medium">80점이상</div>
+                  </div>
+                  <div class="safe-point-chart-label">
+                    <span></span>
+                    <div class="gothic-a1-medium">60점 이상 80점 미만</div>
+                  </div>
+                  <div class="safe-point-chart-label">
+                    <span></span>
+                    <div class="gothic-a1-medium">60점 미만</div>
+                  </div>
+                </div>
+                <canvas id="compare-safe-point"></canvas>
+              </div>
+            </td>
+          </tr>
+          <tr class="safe-report-contents-3">
+            <td>
+              <div class="contents">
+                <div class="header">
+                  <div class="title gothic-a1-bold">작업 시 주요 재해형태</div>
+                  <div class="chart-dots">
+                    <div class="chart-dot">
+                      <span class="dot orange"></span>
+                      <div class="text gothic-a1-medium">전월</div>
+                    </div>
+                    <div class="chart-dot">
+                      <span class="dot blue"></span>
+                      <div class="text gothic-a1-medium">당월</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="canvas-container">
+                  <canvas id="disaster-type"></canvas>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr class="safe-report-contents-4">
+            <td>
+              <div class="contents">
+                <div class="title gothic-a1-bold">아차사고</div>
+                <div class="content-box">
+                  <div>
+                    <div class="chart-title gothic-a1-semibold">아차사고 신고 유형</div>
+                    <div class="chart-box">
+                      <div class="canvas-container">
+                        <canvas id="declaration-type" width="136"></canvas>
+                      </div>
+                      <div class="chart-label">
+                        <div class="chart-data-item">
+                          <span></span>
+                          <div class="company gothic-a1-medium">떨어짐</div>
+                          <div class="gothic-a1-bold">60%</div>
+                        </div>
+                        <div class="chart-data-item">
+                          <span></span>
+                          <div class="company gothic-a1-medium">끼임</div>
+                          <div class="gothic-a1-bold">30%</div>
+                        </div>
+                        <div class="chart-data-item">
+                          <span></span>
+                          <div class="company gothic-a1-medium">부딪힘</div>
+                          <div class="gothic-a1-bold">5%</div>
+                        </div>
+                        <div class="chart-data-item">
+                          <span></span>
+                          <div class="company gothic-a1-medium">물체에 맞음</div>
+                          <div class="gothic-a1-bold">5%</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="chart-title gothic-a1-semibold">아차사고 발생 장소</div>
+                    <div class="chart-box">
+                      <div class="canvas-container">
+                        <canvas id="accident-place" width="136"></canvas>
+                      </div>
+                      <div class="chart-label">
+                        <div class="chart-data-item">
+                          <span></span>
+                          <div class="company gothic-a1-medium">A장소</div>
+                          <div class="gothic-a1-bold">60%</div>
+                        </div>
+                        <div class="chart-data-item">
+                          <span></span>
+                          <div class="company gothic-a1-medium">B장소</div>
+                          <div class="gothic-a1-bold">30%</div>
+                        </div>
+                        <div class="chart-data-item">
+                          <span></span>
+                          <div class="company gothic-a1-medium">C장소</div>
+                          <div class="gothic-a1-bold">5%</div>
+                        </div>
+                        <div class="chart-data-item">
+                          <span></span>
+                          <div class="company gothic-a1-medium">D장소</div>
+                          <div class="gothic-a1-bold">5%</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="chart-title gothic-a1-semibold">이번달 아차사고 조치율</div>
+                    <div class="chart-box">
+                      <canvas id="complete-rate" width="168"></canvas>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+          <tr class="safe-report-contents-footer">
+            <td>
+              <div class="contents">
+                <div class="title gothic-a1-bold">분석</div>
+                <div class="content-box">
+                  <div>
+                    <img src="./svg/check.svg" alt="체크" />
+                    <span class="gothic-a1-medium"
+                      >전월 대비 출역인원이 n명 증가, TBM 인원 n명 감소, 고위험 근로자 n명
+                      증가하였습니다.
+                    </span>
+                  </div>
+                  <div>
+                    <img src="./svg/check.svg" alt="체크" />
+                    <span class="gothic-a1-medium"
+                      >이번 달 TBM 수행률이 현장 평균보다 n% 낮습니다.
+                    </span>
+                  </div>
+                  <div>
+                    <img src="./svg/check.svg" alt="체크" />
+                    <span class="gothic-a1-medium"
+                      >전월 대비 추락, 끼임, 무너짐의 피해형태가 증가하였습니다. (상위 3개)
+                    </span>
+                  </div>
+                  <div>
+                    <img src="./svg/check.svg" alt="체크" />
+                    <span class="gothic-a1-medium"
+                      >아차사고 신고 유형은 ‘추락’ 사고가 가장 많았습니다.
+                    </span>
+                  </div>
+                  <div>
+                    <img src="./svg/check.svg" alt="체크" />
+                    <span class="gothic-a1-medium"
+                      >A장소에서 아차사고 발생 신고가 가장 많이 발생하였습니다.
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <script src="js/index.js" />
+  </body>
+</html>
