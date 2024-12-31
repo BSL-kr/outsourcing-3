@@ -364,14 +364,37 @@ new Chart(completeRate, {
         formatter: function (value, ctx) {
           return ctx.chart.data.datasets[0].data.reduce((a, b) => a + b, 0); // 총합을 계산하여 표시
         },
-        color: '#000000', // 텍스트 색상
+        color: '#000000',
         font: {
           weight: 'bold',
-          size: 24 // 글자 크기
+          size: 24
         },
         align: 'center',
         anchor: 'center'
       }
     }
-  }
+  },
+  plugins: [
+    {
+      id: 'centerText',
+      beforeDraw: function (chart) {
+        const { width } = chart;
+        const { height } = chart;
+        const ctx = chart.ctx;
+
+        ctx.restore();
+        const fontSize = (height / 100).toFixed(2);
+        ctx.font = `${fontSize}em sans-serif`;
+        ctx.textBaseline = 'middle';
+
+        ctx.fillStyle = '#fd792d';
+        const text = '90%';
+        const textX = Math.round((width - ctx.measureText(text).width) / 2);
+        const textY = height / 2;
+
+        ctx.fillText(text, textX, textY);
+        ctx.save();
+      }
+    }
+  ]
 });
