@@ -4,6 +4,11 @@ import LeftArrow from '../assets/LeftArrow';
 import AccidentPreviewBeforeTab from '../components/accidentPreview/before';
 import AccidentPreviewAfterTab from '../components/accidentPreview/after';
 
+const StyledAccidentPreviewPage = styled.div`
+  max-width: 375px;
+  margin: 0 auto;
+`;
+
 const StyledAccidentPreviewPageHeader = styled.header`
   background-color: #121314;
   display: flex;
@@ -63,7 +68,7 @@ const AccidentPreviewPage = () => {
   };
 
   return (
-    <div>
+    <StyledAccidentPreviewPage>
       <StyledAccidentPreviewPageHeader>
         <LeftArrow />
         <h1 className='gothic-a1-semibold'>아차사고</h1>
@@ -92,7 +97,7 @@ const AccidentPreviewPage = () => {
         </div>
       </StyledAccidentPreviewPageTab>
       {accidentState === 'before' ? <AccidentPreviewBeforeTab /> : <AccidentPreviewAfterTab />}
-    </div>
+    </StyledAccidentPreviewPage>
   );
 };
 
