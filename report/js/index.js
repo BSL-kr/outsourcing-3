@@ -351,7 +351,7 @@ new Chart(completeRate, {
   options: {
     responsive: true,
     maintainAspectRatio: false,
-    cutout: '70%', // 도넛의 중심 크기 조정
+    cutout: '85%', // 도넛의 중심 크기 조정
     plugins: {
       legend: {
         display: false // 범례 숨기기
@@ -394,6 +394,45 @@ new Chart(completeRate, {
 
         ctx.fillText(text, textX, textY);
         ctx.save();
+      }
+    },
+    {
+      id: 'pointPlugin',
+      afterDatasetDraw(chart, args, options) {
+        const {
+          ctx,
+          chartArea: { width, height },
+          data
+        } = chart;
+
+        const dataset = chart.data.datasets[0];
+        const meta = chart.getDatasetMeta(0); // 첫 번째 데이터셋
+
+        dataset.data.forEach((value, index) => {
+          if (index !== 0) return;
+          const { endAngle } = meta.data[index].getProps(['startAngle', 'endAngle'], true);
+
+          // 도넛의 중심 좌표와 반지름 계산
+          const centerX = chart.chartArea.left + width / 2;
+          const centerY = chart.chartArea.top + height / 2;
+          const innerRadius = meta.data[index].innerRadius;
+          const outerRadius = meta.data[index].outerRadius;
+          const radius = (innerRadius + outerRadius) / 2;
+
+          // 각 데이터의 끝 좌표 계산
+          const angle = endAngle - Math.PI / 2;
+          const x = centerX + radius * Math.cos(angle);
+          const y = centerY + radius * Math.sin(angle) * -1;
+
+          const offsetX = Math.cos(angle) * 2; // X축 보정
+          const offsetY = Math.sin(angle) * -2; // Y축 보정
+
+          // 포인트(원) 그리기
+          ctx.fillStyle = '#ffffff';
+          ctx.beginPath();
+          ctx.arc(x + 20, y - 20, 10.5, 0, 2 * Math.PI);
+          ctx.fill();
+        });
       }
     }
   ]
